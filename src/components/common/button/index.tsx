@@ -3,6 +3,7 @@ import {FC} from "react";
 
 import {cn} from "@/utilities/tailwind-merge";
 import {ButtonProps} from "./button.interface";
+import LoadingSpinner from "../loading-spinner";
 
 const buttonVariant = cva(
   "flex gap-x-3 items-center font-bold whitespace-nowrap rounded-lg transition hover:duration-75 ease-in-out",
@@ -40,16 +41,24 @@ const Button: FC<ButtonProps> = ({
   className,
   variant,
   size,
+  loading,
   ...buttonProps
 }) => {
   return (
     <button
+      disabled={loading}
       className={cn(buttonVariant({variant, size, className}))}
       {...buttonProps}
     >
-      <span>{children}</span>
-      {size === "large" && (
-        <i className={cn(iconVariant({variant, className}))}></i>
+      {loading ? (
+        <LoadingSpinner variant="primary" />
+      ) : (
+        <>
+          <span>{children}</span>
+          {size === "large" && (
+            <i className={cn(iconVariant({variant, className}))}></i>
+          )}
+        </>
       )}
     </button>
   );

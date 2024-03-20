@@ -5,4 +5,6 @@ import {buttonVariant, iconVariant} from ".";
 export interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariant>,
-    VariantProps<typeof iconVariant> {}
+    VariantProps<typeof iconVariant> {
+  loading: boolean;
+}
