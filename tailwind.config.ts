@@ -10,8 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         primary: "#56B280",
-        secondary: "black",
-        tertiary: "white",
+        gray: "#D6D6D6",
       },
       container: {
         padding: {
