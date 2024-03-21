@@ -1,0 +1,73 @@
+{
+  "menuItems": [
+    {
+      "title": "خانه",
+      "href": "/"
+    },
+    {
+      "title": "محصولات",
+      "href": "/search"
+    },
+    {
+      "title": "درباره ما",
+      "href": "/about"
+    },
+    {
+      "title": "تماس ما",
+      "href": "/contact"
+    }
+  ],
+  "footerMenuItems": [
+    {
+      "title": "لینک های مفید",
+      "items": [
+        {
+          "title": "درباره ما",
+          "href": "#"
+        },
+        {
+          "title": "تماس ما",
+          "href": "#"
+        },
+        {
+          "title": "خدمات ما",
+          "href": "#"
+        }
+      ]
+    },
+    {
+      "title": "فروشگاه",
+      "items": [
+        {
+          "title": "محصولات",
+          "href": "#"
+        },
+        {
+          "title": "پیگیری سفارش",
+          "href": "#"
+        },
+        {
+          "title": "روش های ارسال",
+          "href": "#"
+        }
+      ]
+    },
+    {
+      "title": "سایر",
+      "items": [
+        {
+          "title": "فناپ کمپس",
+          "href": "https://fanapcampus.com/"
+        },
+        {
+          "title": "فیلاگر",
+          "href": "https://filoger.com/"
+        },
+        {
+          "title": "تهران cs50",
+          "href": "https://cs50xtehran.ir/"
+        }
+      ]
+    }
+  ]
+}
