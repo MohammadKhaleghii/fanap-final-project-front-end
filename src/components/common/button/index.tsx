@@ -2,8 +2,8 @@ import {cva} from "class-variance-authority";
 import {FC} from "react";
 
 import {cn} from "@/utilities/tailwind-merge";
-import {ButtonProps} from "./button.interface";
 import LoadingSpinner from "../loading-spinner";
+import {ButtonProps} from "./button.interface";
 
 const buttonVariant = cva(
   "flex gap-x-3 items-center font-bold whitespace-nowrap rounded-lg transition hover:duration-75 ease-in-out",
