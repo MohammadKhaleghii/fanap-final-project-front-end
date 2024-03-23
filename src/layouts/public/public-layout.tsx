@@ -8,7 +8,9 @@ const PublicLayout = ({children}: {children: ReactNode}) => {
       <header className="bg-white border-b border-gray lg:px-0 px-2  ">
         <div className="container flex items-center justify-between mx-auto my-0 py-5">
           {" "}
-          <img className="order-2 lg:order-1" src="logo/logo.png" alt="" />
+          <Link href={"/"}>
+            <img className="order-2 lg:order-1" src="/logo/logo.png" alt="" />
+          </Link>
           <nav className="order-1 lg:order-2">
             <menu className="flex-row items-center justify-center w-full gap-x-6 lg:flex hidden ">
               {menuItems.map((item) => (
@@ -40,7 +42,7 @@ const PublicLayout = ({children}: {children: ReactNode}) => {
             <div>
               <img
                 className="bg-white p-2 rounded-md"
-                src="logo/logo.png"
+                src="/logo/logo.png"
                 alt=""
               />
               <p className="text-justify pt-2">
