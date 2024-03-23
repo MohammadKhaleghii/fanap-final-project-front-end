@@ -1,8 +1,5 @@
-export interface HomeSliderProps {
-  slides: slide[];
-}
+import {SliderInput} from "@/api/dto/slider-input";
 
-interface slide {
-  imagePath: string;
-  title: string;
+export interface SliderProps {
+  slides: SliderInput[];
 }
