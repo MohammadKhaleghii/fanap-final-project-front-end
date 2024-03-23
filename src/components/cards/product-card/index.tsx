@@ -24,9 +24,9 @@ const ProductCard: FC<ProductCardProps> = ({
       />
       <Link
         href={`product/${id}`}
-        className="text-xl text-right font-bold py-4 hover:text-primary cursor-pointer"
+        className="text-lg text-right font-bold py-4 hover:text-primary cursor-pointer mt-2 inline-block"
       >
-        {title}
+        {title.length > 20 ? `${title.slice(0, 20)} ...` : title}
       </Link>
       <p className="text-sm text-[#5E6E89] pb-2">{description}</p>
       <div className="text-left font-bold text-primary">
