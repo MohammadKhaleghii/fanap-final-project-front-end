@@ -4,9 +4,11 @@ import {HeadingProps} from "./heading.interface";
 const Heading: FC<HeadingProps> = ({title, subTitle}) => {
   return (
     <>
-      <h2 className="text-[40px] text-[#0B254B] text-center pb-4">{title}</h2>
+      <h2 className="text-2xl font-bold text-[#0B254B] text-center pb-1 ">
+        {title}
+      </h2>
       {subTitle && (
-        <p className="text-[#5E6E89] text-lg text-center">{subTitle}</p>
+        <p className="text-[#5E6E89] text-sm text-center">{subTitle}</p>
       )}
     </>
   );
