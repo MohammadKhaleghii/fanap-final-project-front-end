@@ -11,7 +11,7 @@ const TestimonialCard: FC<TestimonialProps> = ({
   const ratingStars = [1, 2, 3, 4, 5];
   console.log(ratingStars);
   return (
-    <div className="bg-white flex-col gap-y-5  flex items-center justify-center w-fit rounded-lg  p-4 shadow-xl">
+    <div className="bg-white flex-col gap-y-5  flex items-center justify-center w-full rounded-lg  p-4 shadow-xl">
       <img
         src={imagePath}
         className="rounded-[50%] w-[84px] h-[84px]"
@@ -19,7 +19,7 @@ const TestimonialCard: FC<TestimonialProps> = ({
       />
       <div className="flex flex-row">
         {ratingStars.map((_, index) => (
-          <RatingStar index={index} rating={rate} />
+          <RatingStar key={index} index={index} rating={rate} />
         ))}
       </div>
       <div className="text-xl font-bold">{description}</div>
