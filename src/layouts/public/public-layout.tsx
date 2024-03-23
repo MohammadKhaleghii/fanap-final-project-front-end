@@ -12,7 +12,11 @@ const PublicLayout = ({children}: {children: ReactNode}) => {
           <nav className="order-1 lg:order-2">
             <menu className="flex-row items-center justify-center w-full gap-x-6 lg:flex hidden ">
               {menuItems.map((item) => (
-                <Link className="font-bold hover:text-primary" href={item.href}>
+                <Link
+                  key={item.title}
+                  className="font-bold hover:text-primary"
+                  href={item.href}
+                >
                   {item.title}
                 </Link>
               ))}
@@ -27,9 +31,7 @@ const PublicLayout = ({children}: {children: ReactNode}) => {
           </div>
         </div>
       </header>
-      <main className="mx-auto my-0 max-w-screen-2xl min-w-[360px]">
-        {children}
-      </main>
+      <main>{children}</main>
 
       <footer className=" bg-black text-white py-16 lg:px-4 px-2">
         <div className="mx-auto my-0 container h-1 bg-white rounded-lg"> </div>
@@ -52,7 +54,11 @@ const PublicLayout = ({children}: {children: ReactNode}) => {
               <div key={item.title} className="flex flex-col gap-y-4">
                 <h4 className="text-primary font-bold">{item.title}</h4>
                 {item.items.map((secondItem) => (
-                  <Link className="hover:text-primary " href={secondItem.href}>
+                  <Link
+                    key={secondItem.title}
+                    className="hover:text-primary "
+                    href={secondItem.href}
+                  >
                     {secondItem.title}
                   </Link>
                 ))}
