@@ -23,6 +23,7 @@ import Slider from "@/components/slider";
 import SliderSkeleton from "@/components/slider/slider.skeleton";
 import PublicLayout from "@/layouts/public/public-layout";
 import {useEffect, useState} from "react";
+import toast from "react-hot-toast";
 
 export default function HomePage() {
   // slider states
@@ -46,43 +47,60 @@ export default function HomePage() {
   const [testimonialsLoading, setTestimonialsLoading] = useState(true);
 
   useEffect(() => {
-    // slider api
+    // Array of promises for all API calls
+    const promises = [
+      getSliders(),
+      getArticles(),
+      getCategories(),
+      getTopProducts(),
+      getTestimonial(),
+    ];
+
+    // Set loading states for all data
     setSliderLoading(true);
-    getSliders().then(({data}) => {
-      setSliders(data);
-      setSliderLoading(true);
-    });
-
-    // article api
     setArticlesLoading(true);
-    getArticles().then(({data}) => {
-      setArticlesLoading(false);
-      setArticles(data);
-    });
-    // category api
     setCategoriesLoading(true);
-    getCategories().then(({data}) => {
-      setCategories(data);
-    });
-
-    // top products api
-    getTopProducts().then(({data}) => {
-      setTopProducts(data);
-      setTopProductsLoading(false);
-    });
-
-    // testimonial
+    setTopProductsLoading(true);
     setTestimonialsLoading(true);
-    getTestimonial().then(({data}) => {
-      setTestimonials(data);
-      setTestimonialsLoading(false);
-    });
+
+    // Execute all promises concurrently using Promise.all()
+    Promise.all(promises)
+      .then((results) => {
+        // Destructure results to get data from each API call
+        const [
+          slidersResult,
+          articlesResult,
+          categoriesResult,
+          topProductsResult,
+          testimonialsResult,
+        ] = results;
+
+        // Set data and loading states for each API call
+        setSliders(slidersResult.data);
+        setArticles(articlesResult.data);
+        setCategories(categoriesResult.data);
+        setTopProducts(topProductsResult.data);
+        setTestimonials(testimonialsResult.data);
+
+        // Set loading states to false for all data
+        setSliderLoading(false);
+        setArticlesLoading(false);
+        setCategoriesLoading(false);
+        setTopProductsLoading(false);
+        setTestimonialsLoading(false);
+      })
+      .catch((error) => {
+        // Handle errors for all API calls
+        toast.error("خطایی از سمت سرور رخ داده است، لطفا دوباره رفرش کنید");
+        console.error("API error:", error);
+      });
   }, []);
+
   return (
     <PublicLayout>
       {/* slider */}
       <section className="py-5 centered-container">
-        {sliderLoading && sliders ? (
+        {!sliderLoading && sliders ? (
           <Slider slides={sliders}></Slider>
         ) : (
           <SliderSkeleton />
