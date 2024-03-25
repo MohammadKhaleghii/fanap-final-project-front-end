@@ -16,7 +16,7 @@ export const getTopProducts = () =>
 export const getTestimonial = () =>
   axios.get("https://fanap-final-project-json-server.vercel.app/testimonial");
 
-export const getSearchProducts = (params: SearchProductsOutput) =>
+export const getSearchProducts = (params?: SearchProductsOutput) =>
   axios.get(
     "https://fanap-final-project-json-server.vercel.app/searchProducts",
     {
