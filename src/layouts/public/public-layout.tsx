@@ -29,7 +29,6 @@ const PublicLayout = ({children}: {children: ReactNode}) => {
           </nav>
           <div className="flex flex-row gap-x-4 order-3">
             <i className="fa-regular fa-cart-shopping text-xl cursor-pointer hover:text-primary font-bold"></i>
-            <i className="fa-regular fa-user text-xl cursor-pointer hover:text-primary font-bold"></i>
           </div>
         </div>
       </header>
