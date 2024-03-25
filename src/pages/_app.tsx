@@ -3,7 +3,13 @@ import type {AppProps} from "next/app";
 import "react-loading-skeleton/dist/skeleton.css";
 import "../../public/fonts/awesome/css/all.css";
 import "../../public/fonts/iran-sans/fonts.css";
+import {Toaster} from "react-hot-toast";
 
 export default function App({Component, pageProps}: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Component {...pageProps} />;
+      <Toaster />
+    </>
+  );
 }
