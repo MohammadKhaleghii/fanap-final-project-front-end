@@ -2,8 +2,6 @@ import {FC, useMemo} from "react";
 import {RatingStartProps} from "./rating-star.interface";
 
 const RatingStar: FC<RatingStartProps> = ({index, rating}) => {
-  console.log("rating", rating);
-  console.log("index", index);
   const fill = useMemo(() => {
     if (rating > index) {
       return "green";
