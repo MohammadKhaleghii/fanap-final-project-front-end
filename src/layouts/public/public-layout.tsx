@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {ReactNode} from "react";
-import {menuItems, footerMenuItems} from "./constants.json";
+import {footerMenuItems, menuItems} from "./constants.json";
 
 const PublicLayout = ({children}: {children: ReactNode}) => {
   return (
