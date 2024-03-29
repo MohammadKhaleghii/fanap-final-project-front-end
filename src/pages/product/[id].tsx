@@ -5,12 +5,15 @@ import ProductCard from "@/components/cards/product-card";
 import ProductCardSkeleton from "@/components/cards/product-card/product-card.skeleton";
 import Button from "@/components/common/button";
 import Heading from "@/components/heading";
+import {CartContext} from "@/context/cart-provider";
 import PublicLayout from "@/layouts/public/public-layout";
 import {useRouter} from "next/router";
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import Skeleton from "react-loading-skeleton";
 
 const ProductDetailsPage = () => {
+  const cartContext = useContext(CartContext);
+
   const router = useRouter();
   const {id} = router.query;
   const productID = parseInt(id?.toString() ?? "");
@@ -34,7 +37,6 @@ const ProductDetailsPage = () => {
     });
   }, [id]);
 
-  console.log(loading);
   return (
     <PublicLayout>
       <section className="centered-container">
@@ -101,7 +103,21 @@ const ProductDetailsPage = () => {
               <Skeleton height={40} />
             ) : (
               <div>
-                <Button loading={false}>افزودن به سبد خرید </Button>
+                <Button
+                  onClick={() => {
+                    if (product) {
+                      cartContext.addToCart({
+                        cost: product.cost,
+                        id: product.id,
+                        imagePath: product.imagePath,
+                        title: product.title,
+                      });
+                    }
+                  }}
+                  loading={cartContext.loading}
+                >
+                  افزودن به سبد خرید{" "}
+                </Button>
               </div>
             )}
           </div>
