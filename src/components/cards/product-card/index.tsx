@@ -14,7 +14,7 @@ const ProductCard: FC<ProductCardProps> = ({
   const router = useRouter();
   return (
     <div
-      onClick={() => router.push(`product/${id}`)}
+      onClick={() => router.push(`/product/${id}`)}
       className="bg-white rounded border border-gray p-2 cursor-pointer"
     >
       <img
@@ -23,7 +23,7 @@ const ProductCard: FC<ProductCardProps> = ({
         alt={title}
       />
       <Link
-        href={`product/${id}`}
+        href={`/product/${id}`}
         className="text-lg text-right font-bold py-4 hover:text-primary cursor-pointer mt-2 inline-block"
       >
         {title.length > 20 ? `${title.slice(0, 20)} ...` : title}
