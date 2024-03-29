@@ -35,8 +35,8 @@ export default function ContactPage() {
               تماس با ما
             </h2>
             <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
-              در صورتی که دوس داشتی با تیم ما در ارتباط باشی و یا مشکلی بود که
-              نیاز بود با ما در میونش بزاری لطفا اینجا واسمون پیام بزار
+              در صورتی که دوس داشتی با من در ارتباط باشی و یا مشکلی بود که نیاز
+              بود با من در میونش بزاری لطفا اینجا واسم پیام بزار
             </p>
             <form onSubmit={handleSubmit} className="space-y-8">
               <div>
