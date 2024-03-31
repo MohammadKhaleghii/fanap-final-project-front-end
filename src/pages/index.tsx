@@ -115,10 +115,10 @@ export default function HomePage() {
             categories &&
             categories.map((item) => (
               <CategoryCard
-                id={item.id}
+                categoryID={item.categoryID}
                 imagePath={item.imagePath}
                 title={item.title}
-                key={item.id}
+                key={item.categoryID}
               />
             ))
           )}

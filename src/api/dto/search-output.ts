@@ -1,4 +1,4 @@
 export interface SearchProductsOutput {
-  categoryID?: number;
+  categoryID?: string | number;
   id?: number;
 }

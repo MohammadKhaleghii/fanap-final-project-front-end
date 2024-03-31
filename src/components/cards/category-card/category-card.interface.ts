@@ -1,5 +1,5 @@
 export interface CategoryCardProps {
-  id: number;
+  categoryID: number;
   title: string;
   imagePath: string;
 }

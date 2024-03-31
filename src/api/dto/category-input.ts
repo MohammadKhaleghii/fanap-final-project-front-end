@@ -1,5 +1,5 @@
 export interface CategoryInput {
-  id: number;
+  categoryID: number;
   imagePath: string;
   title: string;
 }

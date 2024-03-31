@@ -7,10 +7,26 @@ import {SliderProps} from "./slider.interface";
 const Slider: FC<SliderProps> = ({slides}) => {
   return (
     <Swiper pagination modules={[Pagination]} className="mySwiper">
-      {slides.length > 0 &&
+      {Slider.length > 0 &&
         slides.map((item) => (
-          <SwiperSlide key={item.id} className="min-h-[300px]">
-            <img className="rounded-lg" src={item.imagePath} alt={item.title} />
+          <SwiperSlide key={item.desktop.id} className="lg:min-h-[300px]">
+            <picture>
+              <source
+                srcSet={item.mobile.imagePath}
+                media="(max-width: 360px)"
+                className="w-full rounded-lg"
+              />
+              <source
+                srcSet={item.desktop.imagePath}
+                media="(min-width: 1024px)"
+                className="w-full rounded-lg"
+              />
+              <img
+                src={item.mobile.imagePath}
+                alt={item.mobile.title}
+                className="w-full rounded-lg"
+              />
+            </picture>
           </SwiperSlide>
         ))}
     </Swiper>
