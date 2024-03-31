@@ -29,6 +29,7 @@ const SearchPage = () => {
   }, [router.query]);
   return (
     <PublicLayout>
+      {/* all products */}
       <section className="centered-container">
         <div className="grid lg:grid-cols-6 sm:grid-cols-3 grid-cols-1 gap-x-3 gap-y-3 pt-3 my-4">
           {!products && loading ? (
@@ -48,6 +49,7 @@ const SearchPage = () => {
           )}
         </div>
       </section>
+      {/* end all products */}
     </PublicLayout>
   );
 };

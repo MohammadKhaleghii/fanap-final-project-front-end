@@ -9,6 +9,7 @@ const CartPage = () => {
     <PublicLayout>
       <section className="px-2 pb-10">
         {selectCart.cart.length ? (
+          // if the cart isn't empty show this section
           <div className="container mx-auto mt-10">
             <div className="flex shadow-md my-10">
               <div className="w-full bg-white px-10 py-10">
@@ -43,6 +44,7 @@ const CartPage = () => {
             </div>
           </div>
         ) : (
+          // if the cart empty show this section
           <div className="flex items-center justify-center flex-col">
             <img loading="lazy" src="images/empty-cart.webp" alt="" />
             <h2 className="lg:pt-5 lg:pb-5 pt-2 text-3xl font-bold">

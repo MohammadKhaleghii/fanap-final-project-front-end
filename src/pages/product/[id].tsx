@@ -39,6 +39,7 @@ const ProductDetailsPage = () => {
 
   return (
     <PublicLayout>
+      {/* product details */}
       <section className="centered-container">
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-3 gap-y-4 my-5">
           <div className="lg:h-[450px] w-full flex items-center justify-center">
@@ -123,6 +124,9 @@ const ProductDetailsPage = () => {
           </div>
         </div>
       </section>
+      {/* end product details */}
+
+      {/* related product */}
       <section className="py-10 centered-container">
         <Heading
           title="محصولات مرتبط"
@@ -146,6 +150,7 @@ const ProductDetailsPage = () => {
           )}
         </div>
       </section>
+      {/* end related product */}
     </PublicLayout>
   );
 };

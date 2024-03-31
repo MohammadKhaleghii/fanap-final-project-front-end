@@ -47,52 +47,54 @@ export default function HomePage() {
   const [testimonialsLoading, setTestimonialsLoading] = useState(true);
 
   useEffect(() => {
-    // Array of promises for all API calls
-    const promises = [
-      getSliders(),
-      getArticles(),
-      getCategories(),
-      getTopProducts(),
-      getTestimonial(),
-    ];
-
-    // Set loading states for all data
-    setSliderLoading(true);
-    setArticlesLoading(true);
-    setCategoriesLoading(true);
-    setTopProductsLoading(true);
-    setTestimonialsLoading(true);
-
-    // Execute all promises concurrently using Promise.all()
-    Promise.all(promises)
-      .then((results) => {
-        // Destructure results to get data from each API call
-        const [
-          slidersResult,
-          articlesResult,
-          categoriesResult,
-          topProductsResult,
-          testimonialsResult,
-        ] = results;
-
-        // Set data and loading states for each API call
+    // Fetch sliders
+    getSliders()
+      .then((slidersResult) => {
         setSliders(slidersResult.data);
-        setArticles(articlesResult.data);
-        setCategories(categoriesResult.data);
-        setTopProducts(topProductsResult.data);
-        setTestimonials(testimonialsResult.data);
-
-        // Set loading states to false for all data
         setSliderLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching sliders:", error);
+      });
+
+    // Fetch articles
+    getArticles()
+      .then((articlesResult) => {
+        setArticles(articlesResult.data);
         setArticlesLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching articles:", error);
+      });
+
+    // Fetch categories
+    getCategories()
+      .then((categoriesResult) => {
+        setCategories(categoriesResult.data);
         setCategoriesLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching categories:", error);
+      });
+
+    // Fetch top products
+    getTopProducts()
+      .then((topProductsResult) => {
+        setTopProducts(topProductsResult.data);
         setTopProductsLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching top products:", error);
+      });
+
+    // Fetch testimonials
+    getTestimonial()
+      .then((testimonialsResult) => {
+        setTestimonials(testimonialsResult.data);
         setTestimonialsLoading(false);
       })
       .catch((error) => {
-        // Handle errors for all API calls
-        toast.error("خطایی از سمت سرور رخ داده است، لطفا دوباره رفرش کنید");
-        console.error("API error:", error);
+        console.error("Error fetching testimonials:", error);
       });
   }, []);
 

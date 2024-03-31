@@ -2,6 +2,12 @@ import {ReactNode, createContext, useState} from "react";
 import {CartContextInterface, CartItem, ProductItem} from "./cart.interface";
 import toast from "react-hot-toast";
 
+// description
+
+// This code establishes a React context and provider component (CartProvider) for managing a shopping cart's state in a React application.
+//  It offers methods for adding, decreasing, and removing items from the cart, along with tracking the current cart items and loading state.
+// It employs React's useState hook for state management and react-hot-toast for displaying notifications.
+
 export const CartContext = createContext<CartContextInterface>({
   addToCart: () => {},
   decreaseProduct: () => {},
