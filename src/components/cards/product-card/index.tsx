@@ -35,7 +35,7 @@ const ProductCard: FC<ProductCardProps> = ({
           {title.length > 20 ? `${title.slice(0, 20)} ...` : title}
         </span>
       </Link>
-      <p className="text-sm text-[#5E6E89] pb-2">{description}</p>
+      <p className="text-sm text-[#5E6E89] pb-2">{description.slice(0, 80)}</p>
       <div className="text-left font-bold text-primary">
         {thousandSeparator(cost)} <span>تومان</span>
       </div>
