@@ -1,12 +1,16 @@
 import CartItem from "@/components/cards/cart-card";
 import {CartContext} from "@/context/cart-provider";
 import PublicLayout from "@/layouts/public/public-layout";
+import Head from "next/head";
 import {useContext} from "react";
 
 const CartPage = () => {
   const selectCart = useContext(CartContext);
   return (
     <PublicLayout>
+      <Head>
+        <title>سبد خرید</title>
+      </Head>
       <section className="px-2 pb-10">
         {selectCart.cart.length ? (
           // if the cart isn't empty show this section

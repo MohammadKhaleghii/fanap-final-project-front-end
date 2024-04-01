@@ -7,7 +7,9 @@ import Button from "@/components/common/button";
 import Heading from "@/components/heading";
 import {CartContext} from "@/context/cart-provider";
 import PublicLayout from "@/layouts/public/public-layout";
+import Head from "next/head";
 import {useRouter} from "next/router";
+import {title} from "process";
 import {useContext, useEffect, useState} from "react";
 import Skeleton from "react-loading-skeleton";
 
@@ -39,6 +41,9 @@ const ProductDetailsPage = () => {
 
   return (
     <PublicLayout>
+      <Head>
+        <title>{product?.title}</title>
+      </Head>
       {/* product details */}
       <section className="centered-container">
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-3 gap-y-4 my-5">

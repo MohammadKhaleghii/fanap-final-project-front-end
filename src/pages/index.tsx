@@ -22,6 +22,7 @@ import Heading from "@/components/heading";
 import Slider from "@/components/slider";
 import SliderSkeleton from "@/components/slider/slider.skeleton";
 import PublicLayout from "@/layouts/public/public-layout";
+import Head from "next/head";
 import {useEffect, useState} from "react";
 import toast from "react-hot-toast";
 
@@ -100,6 +101,10 @@ export default function HomePage() {
 
   return (
     <PublicLayout>
+      <Head>
+        {" "}
+        <title>صفحه اصلی</title>
+      </Head>
       {/* slider */}
       <section className="py-5 centered-container">
         {!sliderLoading && sliders ? (

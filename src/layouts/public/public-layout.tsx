@@ -2,10 +2,13 @@ import Link from "next/link";
 import {ReactNode, useContext, useState} from "react";
 import {footerMenuItems, menuItems} from "./constants.json";
 import {CartContext} from "@/context/cart-provider";
+import {useRouter} from "next/router";
 
 const PublicLayout = ({children}: {children: ReactNode}) => {
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
   const {cart} = useContext(CartContext);
+  const router = useRouter();
+  const currentRoute = router.asPath;
   return (
     <>
       <header className="bg-white border-b border-gray lg:px-0 px-2  ">
@@ -25,7 +28,9 @@ const PublicLayout = ({children}: {children: ReactNode}) => {
               {menuItems.map((item) => (
                 <Link
                   key={item.title}
-                  className="font-bold hover:text-primary"
+                  className={`font-bold hover:text-primary ${
+                    item.href === currentRoute && "text-primary"
+                  }`}
                   href={item.href}
                 >
                   {item.title}
@@ -64,7 +69,9 @@ const PublicLayout = ({children}: {children: ReactNode}) => {
             {menuItems.map((item) => (
               <Link
                 key={item.title}
-                className="font-bold hover:text-primary"
+                className={`font-bold hover:text-primary ${
+                  item.href === currentRoute && "text-primary"
+                }`}
                 href={item.href}
               >
                 {item.title}

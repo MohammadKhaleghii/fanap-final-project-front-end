@@ -11,7 +11,7 @@ const CategoryCard: FC<CategoryCardProps> = ({
   const router = useRouter();
   return (
     <div
-      className="p-4 border-gray rounded-lg bg-[#ebe7e7] flex items-center justify-center flex-col gap-y-4 "
+      className="p-4 border-gray rounded-lg bg-[#ebe7e7] flex items-center justify-center flex-col gap-y-4 transition ease-in delay-100  hover:translate-y-2 hover:scale-105 hover:bg-primary hover:text-white"
       onClick={() => router.push(`/search/?categoryID=${categoryID}`)}
     >
       <img src={imagePath} alt={title} className=" lg:h-24 h-20 rounded-lg" />

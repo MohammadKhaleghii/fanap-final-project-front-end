@@ -4,6 +4,7 @@ import {getSearchProducts} from "@/api/lib/main";
 import ProductCard from "@/components/cards/product-card";
 import ProductCardSkeleton from "@/components/cards/product-card/product-card.skeleton";
 import PublicLayout from "@/layouts/public/public-layout";
+import Head from "next/head";
 import {useRouter} from "next/router";
 import {useEffect, useState} from "react";
 
@@ -29,6 +30,9 @@ const SearchPage = () => {
   }, [router.query]);
   return (
     <PublicLayout>
+      <Head>
+        <title>محصولات</title>
+      </Head>
       {/* all products */}
       <section className="centered-container">
         <div className="grid lg:grid-cols-6 sm:grid-cols-3 grid-cols-1 gap-x-3 gap-y-3 pt-3 my-4">

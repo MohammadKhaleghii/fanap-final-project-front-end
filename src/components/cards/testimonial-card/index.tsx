@@ -10,7 +10,7 @@ const TestimonialCard: FC<TestimonialProps> = ({
 }) => {
   const ratingStars = [1, 2, 3, 4, 5];
   return (
-    <div className="bg-white flex-col gap-y-5  flex items-center justify-center w-full rounded-lg  p-4 shadow-xl">
+    <div className="bg-white flex-col gap-y-5  flex items-center justify-center w-full rounded-lg  p-4 shadow-xl transition delay-150 ease-out hover:-translate-y-2 hover:shadow-2xl duration-150">
       <img
         src={imagePath}
         className="rounded-[50%] w-[84px] h-[84px]"

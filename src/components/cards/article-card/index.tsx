@@ -8,9 +8,12 @@ const ArticleCard: FC<PostCardProps> = ({imagePath, title, description}) => {
       <img
         src={imagePath}
         alt=""
-        className="rounded-lg pb-4 h-[200px] w-full"
+        className="rounded-lg pb-4 h-[200px] w-full transition hover:scale-105"
       />
-      <Link href={"#"} className="text-xl font-bold ">
+      <Link
+        href={""}
+        className="text-xl font-bold hover:text-primary duration-200 "
+      >
         {title}
       </Link>
       <p className="text-sm text-[#5E6E89] pt-4">{description}</p>
