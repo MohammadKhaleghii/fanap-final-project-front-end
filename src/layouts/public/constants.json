@@ -22,16 +22,16 @@
       "title": "لینک های مفید",
       "items": [
         {
-          "title": "درباره من",
-          "href": "#"
+          "title": "درباره ما",
+          "href": "/about"
         },
         {
           "title": "تماس ما",
-          "href": "#"
+          "href": "/contact"
         },
         {
           "title": "خدمات ما",
-          "href": "#"
+          "href": ""
         }
       ]
     },
@@ -40,15 +40,15 @@
       "items": [
         {
           "title": "محصولات",
-          "href": "#"
+          "href": "/search"
         },
         {
           "title": "پیگیری سفارش",
-          "href": "#"
+          "href": ""
         },
         {
           "title": "روش های ارسال",
-          "href": "#"
+          "href": ""
         }
       ]
     },
