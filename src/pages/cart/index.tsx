@@ -17,7 +17,7 @@ const CartPage = () => {
           <div className="container mx-auto mt-10">
             <div className="flex shadow-md my-10">
               <div className="w-full bg-white px-10 py-10">
-                <div className="flex justify-between border-b pb-8">
+                <div className="flex justify-between border-b border-primary pb-8">
                   <h1 className="font-semibold text-2xl">سبد خرید</h1>
                 </div>
                 <div className="flex mt-10 mb-5">

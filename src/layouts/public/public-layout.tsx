@@ -12,7 +12,7 @@ const PublicLayout = ({children}: {children: ReactNode}) => {
   return (
     <>
       <header className="bg-white border-b border-gray lg:px-0 px-2  ">
-        <div className="container flex items-center justify-between mx-auto my-0 py-5">
+        <div className="centered-container flex items-center justify-between mx-auto my-0 py-5">
           {" "}
           <Link href={"/"}>
             <img
@@ -38,7 +38,7 @@ const PublicLayout = ({children}: {children: ReactNode}) => {
               ))}
             </menu>
           </nav>
-          <div className="flex flex-row gap-x-4 order-3">
+          <div className="flex flex-row gap-x-4 order-3 items-center justify-center">
             {/* Shopping Cart */}
             <Link href="/cart">
               <div className="relative cursor-pointer pt-2 pb-[3px] px-1 rounded-full lg:hover:bg-primary-40 lg:hover:bg-opacity-[0.08] w-[35px] h-[35px]">
